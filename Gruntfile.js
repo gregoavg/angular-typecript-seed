@@ -26,7 +26,13 @@ module.exports = function (grunt) {
                     target: 'es5',
                     basePath: 'app/',
                     sourceMap: true,
-                    declaration: true
+                    declaration: true,
+                    watch: {
+                        path: 'app/',
+                        before: ['beforetasks'],   //Set before tasks. eg: clean task
+                        after: ['aftertasks'],      //Set after tasks.  eg: minify task
+                        atBegin: true              //Run tasks when watcher starts. default false
+                    }
                 }
             }
         }

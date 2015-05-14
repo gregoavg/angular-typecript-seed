@@ -21,7 +21,7 @@
     "grunt-typescript": "~0.6.1"
   },
   "scripts": {
-    "postinstall": "bower install && tsd update",
+    "postinstall": "bower install",
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1",
     "pretest": "npm install",
