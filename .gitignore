@@ -29,6 +29,7 @@ tmp
 !/app/typings/tsd.d.ts
 /dist/*
 /tooling/node_modules/*
+!/app/components/version/*.js
 
 # Typescript output files
 *.map

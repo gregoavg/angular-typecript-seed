@@ -44,6 +44,8 @@ module.exports = function (grunt) {
     // Load the plugin that provides the "typescript compile" task
     grunt.loadNpmTasks('grunt-typescript');
 
+    grunt.loadNpmTasks('grunt-typescript-compile');
+
     // Default task(s).
     grunt.registerTask('default', ['uglify', 'typescript']);
 

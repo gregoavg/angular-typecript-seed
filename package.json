@@ -18,7 +18,11 @@
     "grunt-contrib-nodeunit": "~0.4.1",
     "grunt-contrib-uglify": "~0.5.0",
     "typescript": "~1.4.1",
-    "grunt-typescript": "~0.6.1"
+    "grunt-typescript": "~0.6.1",
+    "grunt-typescript-compile": "~0.2.0"
+  },
+  "dependencies": {
+    "ts-compiler": "~2.0.0"
   },
   "scripts": {
     "postinstall": "bower install",
