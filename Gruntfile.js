@@ -46,6 +46,8 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-typescript-compile');
 
+    grunt.loadNpmTasks('tsd update')
+
     // Default task(s).
     grunt.registerTask('default', ['uglify', 'typescript']);
 
