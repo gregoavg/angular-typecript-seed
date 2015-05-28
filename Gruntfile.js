@@ -6,49 +6,30 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        uglify: {
+        concat: {
             options: {
-                banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+                separator: ';'
             },
-            build: {
-                src: 'app/<%= pkg.name %>.js',
-                dest: 'build/<%= pkg.name %>.min.js'
-            }
-        },
-        typescript: {
-            base: {
+            dist: {
                 src: [
-                    'app/**/*.ts'
+                    'app/bower_components/jquery/dist/jquery.js',
+                    'app/bower_components/angular/angular.js',
+                    'app/bower_components/angular-ui-router/release/angular-ui-router.js'
                 ],
-                dest: 'app/',
-                options: {
-                    module: 'amd',
-                    target: 'es5',
-                    basePath: 'app/',
-                    sourceMap: true,
-                    declaration: true,
-                    watch: {
-                        path: 'app/',
-                        before: ['beforetasks'],   //Set before tasks. eg: clean task
-                        after: ['aftertasks'],      //Set after tasks.  eg: minify task
-                        atBegin: true              //Run tasks when watcher starts. default false
-                    }
-                }
+                dest: 'app/output/libs.js'
             }
         }
     });
 
-    // Load the plugin that provides the "uglify" task.
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-
     // Load the plugin that provides the "typescript compile" task
     grunt.loadNpmTasks('grunt-typescript');
 
-    grunt.loadNpmTasks('grunt-typescript-compile');
-
-    grunt.loadNpmTasks('tsd update')
+    // Load the plugin that concats all bower dependencies
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'typescript']);
+    grunt.registerTask('default', [
+        'concat'
+    ]);
 
 };
