@@ -1,33 +1,29 @@
-module.exports = function(config){
-  config.set({
+module.exports = function (config) {
+    config.set({
+        basePath: 'app/output/',
+        frameworks: [
+            'jasmine'
+        ],
+        port: 9876,
+        files: [
+            'libs.js',
+            'built.js',
+            'built-specs.js'
+        ],
 
-    basePath : './',
+        // enable / disable colors in the output (reporters and logs)
+        colors: true,
 
-    files : [
-      'app/bower_components/angular/angular.js',
-      'app/bower_components/angular-route/angular-route.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/components/**/*.js',
-      'app/view*/**/*.js'
-    ],
+        // level of logging
+        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+        logLevel: config.LOG_INFO,
 
-    autoWatch : true,
+        // enable / disable watching file and executing tests whenever any file changes
+        autoWatch: false,
 
-    frameworks: ['jasmine'],
-
-    browsers : ['Chrome'],
-
-    plugins : [
-            'karma-chrome-launcher',
-            'karma-firefox-launcher',
-            'karma-jasmine',
-            'karma-junit-reporter'
-            ],
-
-    junitReporter : {
-      outputFile: 'test_out/unit.xml',
-      suite: 'unit'
-    }
-
-  });
+        // start these browsers
+        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+        browsers: ['PhantomJS'],
+        singleRun: true
+    });
 };

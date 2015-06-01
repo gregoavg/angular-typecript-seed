@@ -22,6 +22,7 @@
     "grunt-typescript-compile": "~0.2.0"
   },
   "dependencies": {
+    "grunt-ts": "^4.1.0",
     "ts-compiler": "~2.0.0"
   },
   "scripts": {

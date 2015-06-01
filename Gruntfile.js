@@ -18,18 +18,47 @@ module.exports = function (grunt) {
                 ],
                 dest: 'app/output/libs.js'
             }
+        },
+
+        ts: {
+            default: {
+                src: [
+                    "app/**/*.ts",
+                    "!app/**/*.spec.ts",
+                    "!app/bower_components/**"
+                ],
+                out: "app/output/built.js",
+                target: 'es5'
+            },
+            tests: {
+                src: [
+                    "app/**/*.spec.ts"
+                ],
+                out: "app/output/built-specs.js",
+                target: 'es5'
+            }
+        },
+
+        less: {
+            development: {
+                files: {
+                    "output/style.css": "app/main-style.less"
+                }
+            }
+        },
+
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js'
+            }
         }
     });
 
-    // Load the plugin that provides the "typescript compile" task
-    grunt.loadNpmTasks('grunt-typescript');
-
-    // Load the plugin that concats all bower dependencies
     grunt.loadNpmTasks('grunt-contrib-concat');
-
-    // Default task(s).
-    grunt.registerTask('default', [
-        'concat'
-    ]);
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-ts');
+    grunt.loadNpmTasks('grunt-karma');
+    grunt.registerTask('run-test', ['ts:default', 'ts:tests', 'karma:unit']);
+    grunt.registerTask('default', ['concat']);
 
 };
