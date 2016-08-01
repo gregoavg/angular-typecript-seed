@@ -1,4 +1,4 @@
-///<reference path="..\typings\jasmine\jasmine.d.ts"/>
+///<reference path="..\typings\index.d.ts"/>
 
 describe("View1 Controller Test", () => {
 

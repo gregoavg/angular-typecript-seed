@@ -1,4 +1,5 @@
-///<reference path="..\components\Constants.ts"/>
+///<reference path="..\typings\index.d.ts"/>
+///<reference path="..\components\constants.ts"/>
 
 module MyApp.View1 {
 

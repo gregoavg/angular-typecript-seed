@@ -1,4 +1,4 @@
-/// <reference path="../typings/tsd.d.ts" />
+/// <reference path="../typings/index.d.ts" />
 ///<reference path="View2Controller.ts"/>
 
 module MyApp.View2 {

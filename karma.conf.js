@@ -7,8 +7,8 @@ module.exports = function (config) {
         port: 9876,
         files: [
             'libs.js',
-            'built.js',
-            'built-specs.js'
+            'build.js',
+            'build-specs.js'
         ],
 
         // enable / disable colors in the output (reporters and logs)

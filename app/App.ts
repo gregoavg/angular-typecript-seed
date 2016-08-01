@@ -1,8 +1,8 @@
-/// <reference path="typings/tsd.d.ts" />
-///<reference path="components\Constants.ts"/>
-
+///<reference path="typings/index.d.ts"/>
+///<reference path="components\constants.ts"/>
 ///<reference path="view1\_view1.ts"/>
 ///<reference path="view2\_view2.ts"/>
+
 angular.module("myApp", [
         'ui.router',
         'myApp.view1',

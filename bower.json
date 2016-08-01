@@ -17,13 +17,13 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.2.x",
-    "angular-route": "1.2.x",
-    "angular-loader": "1.2.x",
-    "angular-mocks": "~1.4.0",
-    "html5-boilerplate": "~4.3.0",
-    "jquery": "~2.1.4",
-    "requirejs": "~2.1.17",
-    "angular-ui-router": "~0.2.15"
+    "angular": "*",
+    "angular-route": "*",
+    "angular-loader": "*",
+    "angular-mocks": "*",
+    "html5-boilerplate": "*",
+    "jquery": "*",
+    "requirejs": "*",
+    "angular-ui-router": "*"
   }
 }

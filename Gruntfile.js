@@ -1,11 +1,9 @@
-/**
- * Created by Grigorios on 14-May-15.
- */
 module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
         concat: {
             options: {
                 separator: ';'
@@ -22,27 +20,27 @@ module.exports = function (grunt) {
 
         ts: {
             default: {
+                target: 'es5',
                 src: [
                     "app/**/*.ts",
                     "!app/**/*.spec.ts",
                     "!app/bower_components/**"
                 ],
-                out: "app/output/built.js",
-                target: 'es5'
+                out: "app/output/build.js"
             },
             tests: {
+                target: 'es5',
                 src: [
                     "app/**/*.spec.ts"
                 ],
-                out: "app/output/built-specs.js",
-                target: 'es5'
+                out: "app/output/build-specs.js"
             }
         },
 
         less: {
             development: {
                 files: {
-                    "output/style.css": "app/main-style.less"
+                    "output/style.css": "app/**/*.less"
                 }
             }
         },
@@ -58,7 +56,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-ts');
     grunt.loadNpmTasks('grunt-karma');
-    grunt.registerTask('run-test', ['ts:default', 'ts:tests', 'karma:unit']);
-    grunt.registerTask('default', ['concat']);
+    grunt.registerTask('compile', ['less','ts']);
+    grunt.registerTask('test', ['ts:default', 'ts:tests', 'karma:unit']);
+    grunt.registerTask('default', ['concat','less','ts']);
+    grunt.registerTask('build', ['concat','less','ts', 'karma'])
 
 };

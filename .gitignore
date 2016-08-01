@@ -9,7 +9,7 @@ nbactions-release-profile.xml
 dependency-reduced-pom.xml
 
 # Intellij
-.idea/*
+.idea
 *.iml
 
 # Eclipse
@@ -23,18 +23,19 @@ logs/*
 tmp
 .DS_Store
 
-/node_modules/*
-/app/bower_components/*
-/app/typings/*
-!/app/typings/tsd.d.ts
+node_modules
+app/bower_components
+app/typings
+!app/typings/index.d.ts
 /dist/*
-/tooling/node_modules/*
-!/app/components/*
+/tooling/node_modules
+!app/components/*
+*.log
 
 # Typescript output files
 *.map
-app/out.js
+app/output
 app/*.js
-app/*/*.js
-app/*/*/*.js
+app/**/*.js
+.tscache
 .tscache/*

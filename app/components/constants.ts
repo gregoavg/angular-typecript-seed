@@ -1,4 +1,3 @@
-
 module MyApp.Components {
 
     export class Constants {
